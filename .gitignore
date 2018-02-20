@@ -1,0 +1,9 @@
+ShaderError.txt
+.gradle/
+*.iml
+.idea/
+out/
+build/
+target/
+*.class
+*.log

@@ -1,0 +1,62 @@
+import org.gradle.internal.os.OperatingSystem
+
+group 'org.openrndr.examples'
+version '0.3-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.2.20'
+
+    repositories {
+	mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+ext.rndr_version = '0.3.0-SNAPSHOT'
+ext.slf4j_version = '1.7.5'
+ext.kotlin_logging_version = '1.4.6'
+ext.rndr_gl3_natives = ""
+
+switch (OperatingSystem.current()) {
+    case OperatingSystem.WINDOWS:
+        ext.rndr_gl3_natives = "openrndr-gl3-natives-windows"
+        break
+    case OperatingSystem.MAC_OS:
+        ext.rndr_gl3_natives = "openrndr-gl3-natives-macos"
+        break
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    sourceCompatibility = 1.8
+    compileKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "1.8"
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        compile "org.openrndr:openrndr-core:$rndr_version"
+        runtime "org.openrndr:openrndr-gl3:$rndr_version"
+        runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
