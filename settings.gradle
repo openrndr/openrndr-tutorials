@@ -1,4 +1,4 @@
-rootProject.name = 'openrndr-examples'
+rootProject.name = 'openrndr-tutorials'
 
 include 'custom-rendering-001',
         'custom-rendering-002',

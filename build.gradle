@@ -4,7 +4,7 @@ group 'org.openrndr.examples'
 version '0.3-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.2.20'
+    ext.kotlin_version = '1.2.21'
 
     repositories {
 	mavenLocal()
@@ -27,6 +27,10 @@ switch (OperatingSystem.current()) {
     case OperatingSystem.MAC_OS:
         ext.rndr_gl3_natives = "openrndr-gl3-natives-macos"
         break
+    case OperatingSystem.LINUX:
+        ext.rndr_gl3_natives = "openrndr-gl3-natives-linux-x64"
+        break
+
 }
 
 allprojects {
@@ -42,6 +46,8 @@ allprojects {
     }
     repositories {
         mavenCentral()
+        mavenLocal()
+
     }
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -53,6 +59,7 @@ allprojects {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
