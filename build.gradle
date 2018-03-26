@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-ext.rndr_version = '0.3.4'
+ext.rndr_version = '0.3.7'
 ext.slf4j_version = '1.7.5'
 ext.kotlin_logging_version = '1.4.6'
 ext.rndr_gl3_natives = ""
@@ -53,6 +53,7 @@ allprojects {
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
         compile "org.openrndr:openrndr-core:$rndr_version"
+        compile "org.openrndr:openrndr-svg:$rndr_version"
         runtime "org.openrndr:openrndr-gl3:$rndr_version"
         runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
     }
