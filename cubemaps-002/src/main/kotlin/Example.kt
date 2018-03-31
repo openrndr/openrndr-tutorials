@@ -6,13 +6,13 @@ import org.openrndr.draw.*
 import org.openrndr.math.Vector3
 import org.openrndr.math.transforms.transform
 
-class Example:Program() {
+class Example : Program() {
 
-    lateinit var cubemap:Cubemap
-    lateinit var irradiance:Cubemap
-    lateinit var cube:VertexBuffer
-    lateinit var texture:ColorBuffer
-    lateinit var normals:ColorBuffer
+    lateinit var cubemap: Cubemap
+    lateinit var irradiance: Cubemap
+    lateinit var cube: VertexBuffer
+    lateinit var texture: ColorBuffer
+    lateinit var normals: ColorBuffer
 
     override fun setup() {
         cubemap = Cubemap.fromUrl("file:data/garage.dds")
@@ -27,7 +27,7 @@ class Example:Program() {
                     attribute("tangent", 3, VertexElementType.FLOAT32)
                     attribute("binormal", 3, VertexElementType.FLOAT32)
                     textureCoordinate(3)
-                }, 6* 3 * 2
+                }, 6 * 3 * 2
         )
         cube.put {
             val p000 = Vector3(-1.0, -1.0, -1.0)
@@ -49,17 +49,17 @@ class Example:Program() {
 
             // -- positive x
             write(p100); write(npx); write(npy); write(npz); write(p100)
-            write(p101); write(npx); write(npy); write(npz);write(p101)
-            write(p111); write(npx); write(npy); write(npz);write(p111)
+            write(p101); write(npx); write(npy); write(npz); write(p101)
+            write(p111); write(npx); write(npy); write(npz); write(p111)
 
-            write(p111); write(npx); write(npy); write(npz);write(p111)
-            write(p110); write(npx); write(npy); write(npz);write(p110)
-            write(p100); write(npx); write(npy); write(npz);write(p100)
+            write(p111); write(npx); write(npy); write(npz); write(p111)
+            write(p110); write(npx); write(npy); write(npz); write(p110)
+            write(p100); write(npx); write(npy); write(npz); write(p100)
 
             // -- negative x
-            write(p000); write(nnx); write(nny); write(nnz);write(p000)
-            write(p001); write(nnx); write(nny); write(nnz);write(p001)
-            write(p011); write(nnx); write(nny); write(nnz);write(p011)
+            write(p000); write(nnx); write(nny); write(nnz); write(p000)
+            write(p001); write(nnx); write(nny); write(nnz); write(p001)
+            write(p011); write(nnx); write(nny); write(nnz); write(p011)
 
             write(p011); write(nnx); write(nny); write(nnz); write(p011)
             write(p010); write(nnx); write(nny); write(nnz); write(p010)
@@ -105,12 +105,12 @@ class Example:Program() {
 
     override fun draw() {
         drawer.background(ColorRGBa.GRAY)
-        drawer.perspective(45.0, width*1.0/height, 0.1, 100.0)
+        drawer.perspective(45.0, width * 1.0 / height, 0.1, 100.0)
 
         drawer.depthWrite = true
         drawer.depthTestPass = DepthTestPass.LESS
 
-        drawer.lookAt(Vector3(0.0, 1.0, 1.0),Vector3(0.0, 0.0, 0.0))
+        drawer.lookAt(Vector3(0.0, 1.0, 1.0), Vector3(0.0, 0.0, 0.0))
 
         cubemap.filter(MinifyingFilter.NEAREST_MIPMAP_LINEAR, MagnifyingFilter.LINEAR)
 
@@ -157,7 +157,7 @@ class Example:Program() {
                     s = pow(s,10.0);
                     vec3 specularNormal = (inverse(u_viewMatrix) * vec4(reflect(nv, viewNormal ),0.0)).xyz;
 
-                    x_fill.rgb += pow(texture(p_cubemap, specularNormal).rgb*1.0, vec3(2.2));
+                    x_fill.rgb += pow(texture(p_cubemap, specularNormal).rgb*1.0*s, vec3(2.2));
                     x_fill.rgb = pow(x_fill.rgb, vec3(1.0/2.2));
                     """
             parameter("irradiance", irradiance)
@@ -168,14 +168,12 @@ class Example:Program() {
 
         drawer.shadeStyle = shadeStyle2
 
-        for (i in 0..0) {
-            drawer.model = transform {
-                rotate(seconds * 20.0+i*13.2, Vector3.UNIT_Y)
-                rotate(seconds * 12+i*35.223, Vector3.UNIT_X)
-                scale(0.3)
-            }
-            drawer.vertexBuffer(cube, DrawPrimitive.TRIANGLES)
+        drawer.model = transform {
+            rotate(Vector3.UNIT_Y, seconds * 20)
+            rotate(Vector3.UNIT_X, seconds * 12)
+            scale(0.3)
         }
+        drawer.vertexBuffer(cube, DrawPrimitive.TRIANGLES)
     }
 }
 
