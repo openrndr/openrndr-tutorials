@@ -21,5 +21,6 @@ include 'custom-rendering-001',
         'filters-001',
         'image-001',
         'image-002',
+        'svg-001',
         'video-001'
 
