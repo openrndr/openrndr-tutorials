@@ -53,6 +53,7 @@ allprojects {
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
         compile "org.openrndr:openrndr-core:$rndr_version"
+        compile "org.openrndr:openrndr-animatable:$rndr_version"
         compile "org.openrndr:openrndr-svg:$rndr_version"
         runtime "org.openrndr:openrndr-gl3:$rndr_version"
         runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
