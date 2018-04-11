@@ -2,27 +2,36 @@ import org.openrndr.Application
 import org.openrndr.Configuration
 import org.openrndr.Program
 import org.openrndr.color.ColorRGBa
-import org.openrndr.draw.ColorBuffer
-import org.openrndr.draw.RenderTarget
-import org.openrndr.draw.colorBuffer
-import org.openrndr.draw.renderTarget
-import org.openrndr.filter.blur.BoxBlur
+import org.openrndr.draw.*
+import org.openrndr.filter.filterShaderFromUrl
+
+/**
+ * Example noise filter
+ */
+class Noise : Filter(filterShaderFromUrl("file:data/shaders/noise.frag")) {
+    var gain: Double by parameters
+    var time: Double by parameters
+
+    init {
+        gain = 1.0
+    }
+}
 
 /**
  * This is a basic example that shows how to perform post-processing using filters
  */
 class Example : Program() {
 
-    lateinit var blur: BoxBlur
+    lateinit var noise: Noise
     lateinit var rt: RenderTarget
-    lateinit var blurred: ColorBuffer
+    lateinit var distorted: ColorBuffer
 
     override fun setup() {
-        blur = BoxBlur()
+        noise = Noise()
         rt = renderTarget(width, height) {
             colorBuffer()
         }
-        blurred = colorBuffer(width, height)
+        distorted = colorBuffer(width, height)
     }
 
     override fun draw() {
@@ -33,9 +42,10 @@ class Example : Program() {
             circle(mouse.position, 100.0)
         }
 
-        blur.window = 10
-        blur.apply(rt.colorBuffer(0), blurred)
-        drawer.image(blurred)
+        noise.gain = Math.cos(seconds) * 0.5 + 0.5
+        noise.time = seconds
+        noise.apply(rt.colorBuffer(0), distorted)
+        drawer.image(distorted)
     }
 }
 
