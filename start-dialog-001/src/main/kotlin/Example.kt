@@ -23,7 +23,7 @@ class Dialog:Program() {
 
     override fun draw() {
         drawer.background(ColorRGBa.PINK)
-        drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 20.0)
+        drawer.fontMap = FontImageMap.fromUrl("file:start-dialog-001/data/fonts/Roboto-Medium.ttf", 20.0)
         drawer.fill = ColorRGBa.BLACK
         drawer.text("windowed", 100.0, height/2.0)
         drawer.text("fullscreen", width-200.0, height/2.0)
@@ -37,7 +37,7 @@ class Example: Program() {
     override fun draw() {
         drawer.background(ColorRGBa.PINK)
 
-        drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 20.0)
+        drawer.fontMap = FontImageMap.fromUrl("file:start-dialog-001/data/fonts/Roboto-Medium.ttf", 20.0)
         drawer.fill = ColorRGBa.BLACK
 
         if (fullScreen == true) {

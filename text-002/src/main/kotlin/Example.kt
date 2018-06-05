@@ -17,7 +17,7 @@ class Example: Program() {
     lateinit var font : FontImageMap
 
     override fun setup() {
-        font = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 16.0)
+        font = FontImageMap.fromUrl("file:text-002/data/fonts/Roboto-Medium.ttf", 16.0)
     }
 
     override fun draw() {
