@@ -54,7 +54,7 @@ class Example : Program() {
 
         drawer.shadeStyle = shadeStyle {
             vertexTransform = """
-                x_viewMatrix = x_viewMatrix * i_transform;aa
+                x_viewMatrix = x_viewMatrix * i_transform;
             """
         }
 

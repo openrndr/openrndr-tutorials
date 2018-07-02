@@ -34,7 +34,7 @@ class Example: Program() {
         drawer.fill = ColorRGBa.WHITE
         drawer.shadeStyle = shadeStyle {
             fragmentTransform = """
-                x_fill.rgb = vec3(cos(view.position.x*0.1)*0.5+0.5, 0.0, 0.0);
+                x_fill.rgb = vec3(cos(v_viewPosition.x*0.1)*0.5+0.5, 0.0, 0.0);
                 """
         }
         drawer.vertexBuffer(geometry, DrawPrimitive.TRIANGLES)
