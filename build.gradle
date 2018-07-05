@@ -1,7 +1,7 @@
 import org.gradle.internal.os.OperatingSystem
 
 group 'org.openrndr.examples'
-version '0.3-SNAPSHOT'
+version '0.4-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '1.2.31'
