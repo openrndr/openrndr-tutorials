@@ -3,6 +3,7 @@ import org.openrndr.Application
 import org.openrndr.Configuration
 import org.openrndr.Program
 import org.openrndr.color.ColorRGBa
+import org.openrndr.configuration
 
 import org.openrndr.ffmpeg.FFMPEGVideoPlayer
 
@@ -14,7 +15,7 @@ class Example: Program() {
     lateinit var videoPlayer:FFMPEGVideoPlayer
 
     override fun setup() {
-        videoPlayer = FFMPEGVideoPlayer.fromURL("file:data/openrndr.mp4")
+        videoPlayer = FFMPEGVideoPlayer.fromURL("file:video-001/data/openrndr.mp4")
         videoPlayer.start()
     }
 
@@ -26,5 +27,8 @@ class Example: Program() {
 }
 
 fun main(args: Array<String>) {
-    Application.run(Example(), Configuration())
+    Application.run(Example(), configuration {
+        width = 640
+        height = 360
+    })
 }

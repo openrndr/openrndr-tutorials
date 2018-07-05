@@ -41,7 +41,7 @@ class Example : Program() {
             for (i in 0 until 1000) {
                 write(transform {
                     translate(Math.random() * width, Math.random() * height)
-                    rotate(Math.random() * 360.0)
+                    rotate(Vector3.UNIT_Z, Math.random() * 360.0)
                 })
             }
         }
@@ -54,7 +54,7 @@ class Example : Program() {
 
         drawer.shadeStyle = shadeStyle {
             vertexTransform = """
-                x_viewMatrix = x_viewMatrix * i_transform;aa
+                x_viewMatrix = x_viewMatrix * i_transform;
             """
         }
 

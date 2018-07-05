@@ -1,6 +1,7 @@
 rootProject.name = 'openrndr-tutorials'
 
-include 'custom-rendering-001',
+include 'animation-001',
+        'custom-rendering-001',
         'custom-rendering-002',
         'custom-rendering-003',
         'custom-rendering-004',
@@ -20,7 +21,9 @@ include 'custom-rendering-001',
         'text-001',
         'text-002',
         'filters-001',
+        'filters-002',
         'image-001',
         'image-002',
+        'svg-001',
         'video-001'
 

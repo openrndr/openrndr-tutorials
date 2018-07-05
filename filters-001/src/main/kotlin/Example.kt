@@ -22,7 +22,6 @@ class Example : Program() {
         rt = renderTarget(width, height) {
             colorBuffer()
         }
-
         blurred = colorBuffer(width, height)
     }
 
