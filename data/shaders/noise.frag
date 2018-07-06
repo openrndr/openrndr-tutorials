@@ -23,4 +23,5 @@ void main() {
     float n = hash22(v_texCoord0+vec2(time)).x;
     vec4 color = texture(tex0, v_texCoord0) + vec4(vec3(n), 0.0) * gain;
     o_color = color;
+    o_color.r = 0.9;
 }

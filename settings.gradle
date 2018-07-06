@@ -18,12 +18,14 @@ include 'animation-001',
         'render-targets-002',
         'start-dialog-001',
         'shader-watcher-001',
+        'slit-scan-001',
         'text-001',
         'text-002',
         'filters-001',
         'filters-002',
+        'filters-003',
         'image-001',
         'image-002',
         'svg-001',
-        'video-001'
-
+        'video-001',
+        'video-002'

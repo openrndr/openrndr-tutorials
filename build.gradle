@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-ext.rndr_version = '0.3.17'
+ext.rndr_version = '0.3.18'
 ext.slf4j_version = '1.7.5'
 ext.kotlin_logging_version = '1.4.6'
 ext.rndr_gl3_natives = ""

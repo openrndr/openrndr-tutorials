@@ -3,6 +3,7 @@ import org.openrndr.Configuration
 import org.openrndr.Program
 import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.ShaderWatcher
+import org.openrndr.draw.shaderWatcher
 import java.io.File
 
 /**
@@ -13,9 +14,10 @@ import java.io.File
 class Example: Program() {
     lateinit var watcher: ShaderWatcher
     override fun setup() {
-
-        println(File(".").absolutePath)
-        watcher = ShaderWatcher.fromFiles("../data/shaders/watch-me.vert", "../data/shaders/watch-me.frag")
+        watcher = shaderWatcher {
+            fragmentShaderUrl = "file:../data/shaders/watch-me.frag"
+            vertexShaderUrl = "file:../data/shaders/watch-me.vert"
+        }
     }
 
     override fun draw() {
