@@ -10,7 +10,7 @@ class Example:Program() {
     lateinit var cubemap:Cubemap
     lateinit var cube:VertexBuffer
     override fun setup() {
-        cubemap = Cubemap.fromUrl("file:data/garage.dds")
+        cubemap = Cubemap.fromUrl("file:data/textures/garage.dds")
 
         cube = vertexBuffer(
                 vertexFormat {

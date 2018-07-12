@@ -15,10 +15,10 @@ class Example : Program() {
     lateinit var normals: ColorBuffer
 
     override fun setup() {
-        cubemap = Cubemap.fromUrl("file:cubemaps-002/data/garage.dds")
-        irradiance = Cubemap.fromUrl("file:cubemaps-002/data/garage_iem.dds")
-        texture = ColorBuffer.fromFile("cubemaps-002/data/snake.png")
-        normals = ColorBuffer.fromFile("cubemaps-002/data/snake-normal.png")
+        cubemap = Cubemap.fromUrl("file:data/textures/garage.dds")
+        irradiance = Cubemap.fromUrl("file:data/textures/garage_iem.dds")
+        texture = ColorBuffer.fromFile("data/textures/snake.png")
+        normals = ColorBuffer.fromFile("data/textures/snake-normal.png")
 
         cube = vertexBuffer(
                 vertexFormat {
