@@ -18,7 +18,7 @@ class Noise : Filter(watcher = filterWatcherFromUrl("file:../data/shaders/noise.
 }
 
 /**
- * This is a basic example that shows how to perform post-processing using filters
+ * This is a basic example that shows how to perform post-processing using filters and shader watchers
  */
 class Example : Program() {
 
