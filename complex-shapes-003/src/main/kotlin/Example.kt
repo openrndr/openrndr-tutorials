@@ -8,7 +8,7 @@ import org.openrndr.shape.LineSegment
 import org.openrndr.shape.Rectangle
 
 /**
- * This is a basic example that shows how to draw complex shapes made using the shape {} and contour {} builders
+ * This is a basic example that shows how to draw complex shapes constructed from primitives
  */
 class Example: Program() {
     override fun draw() {

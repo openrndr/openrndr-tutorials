@@ -31,6 +31,7 @@ include 'animation-001',
         'filters-003',
         'image-001',
         'image-002',
+        'image-003',
         'svg-001',
         'video-001',
         'video-002'
