@@ -12,7 +12,7 @@ class Example: Program() {
 
     lateinit var image: ColorBuffer
     override fun setup() {
-        image = ColorBuffer.fromUrl("file:image-002/data/test_pattern.png")
+        image = ColorBuffer.fromUrl("file:data/images/test_pattern.png")
     }
 
     override fun draw() {

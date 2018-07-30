@@ -18,7 +18,7 @@ class Example : Program() {
     override fun setup() {
 
 
-        val c = loadSVG(File("custom-rendering-004/data/shape.svg").readText())
+        val c = loadSVG(File("data/svg/shape.svg").readText())
         val shape = c.findShapes()[0].shape
 
         val points = Triangulator().triangulate(shape.outline)

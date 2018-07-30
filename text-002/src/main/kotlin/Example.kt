@@ -12,12 +12,12 @@ import org.openrndr.text.Writer
  *
  * Be sure to set the working directory in the run configuration to $MODULE_DIR$
  */
-class Example: Program() {
+class Example : Program() {
 
-    lateinit var font : FontImageMap
+    lateinit var font: FontImageMap
 
     override fun setup() {
-        font = FontImageMap.fromUrl("file:text-002/data/fonts/Roboto-Medium.ttf", 16.0)
+        font = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 16.0)
     }
 
     override fun draw() {
@@ -27,7 +27,7 @@ class Example: Program() {
         drawer.stroke = null
 
         Writer(drawer).apply {
-            box = Rectangle(Vector2(100.0, 100.0), width-200.0, height-200.0)
+            box = Rectangle(Vector2(100.0, 100.0), width - 200.0, height - 200.0)
             for (i in 0 until 10) {
                 text("HELLO WORLD")
                 newLine()

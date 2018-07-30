@@ -37,7 +37,7 @@ class Example: Program() {
     override fun draw() {
         drawer.background(ColorRGBa.PINK)
 
-        drawer.fontMap = FontImageMap.fromUrl("file:start-dialog-001/data/fonts/Roboto-Medium.ttf", 20.0)
+        drawer.fontMap = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 20.0)
         drawer.fill = ColorRGBa.BLACK
 
         if (fullScreen == true) {
