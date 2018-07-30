@@ -1,6 +1,7 @@
 rootProject.name = 'openrndr-tutorials'
 
 include 'animation-001',
+        'camera-001',
         'clip-001',
         'color-001',
         'custom-rendering-001',
@@ -33,6 +34,7 @@ include 'animation-001',
         'filters-003',
         'image-001',
         'image-002',
+        'image-003',
         'svg-001',
         'video-001',
         'video-002'
