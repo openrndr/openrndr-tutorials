@@ -15,6 +15,7 @@ buildscript {
 }
 
 ext.rndr_version = '0.3.22'
+ext.panel_version = '0.3.3'
 ext.slf4j_version = '1.7.25'
 ext.rndr_gl3_natives = ""
 

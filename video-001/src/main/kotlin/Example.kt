@@ -1,4 +1,3 @@
-import org.bytedeco.javacpp.avformat.av_register_all
 import org.openrndr.Application
 import org.openrndr.Configuration
 import org.openrndr.Program
