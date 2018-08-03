@@ -20,7 +20,7 @@ class Example : Program() {
         // -- specify a vertexbuffer that will be used a data buffer
         // -- you can add more attributes here
         data = vertexBuffer( vertexFormat  {
-            attribute("color", 4, VertexElementType.FLOAT32) // <- note the name of the attribute
+            attribute("color", VertexElementType.VECTOR4_FLOAT32) // <- note the name of the attribute
         }, 50) // <- you can safely use much high numbers here
 
         // -- write random colors in this data buffer

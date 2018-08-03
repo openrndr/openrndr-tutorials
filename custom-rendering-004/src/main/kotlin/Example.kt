@@ -16,11 +16,8 @@ class Example : Program() {
     lateinit var geometry: VertexBuffer
     lateinit var transforms: VertexBuffer
     override fun setup() {
-
-
         val c = loadSVG(File("data/svg/shape.svg").readText())
         val shape = c.findShapes()[0].shape
-
         val points = Triangulator().triangulate(shape.outline)
 
         // -- create the vertex buffer
@@ -39,7 +36,7 @@ class Example : Program() {
         // -- create the transform buffer
         transforms = vertexBuffer(
                 vertexFormat {
-                    attribute("transform", 16, VertexElementType.FLOAT32)
+                    attribute("transform", VertexElementType.MATRIX44_FLOAT32)
                     color(4)
                 }, 1000)
 

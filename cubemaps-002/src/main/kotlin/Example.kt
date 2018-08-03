@@ -24,8 +24,8 @@ class Example : Program() {
                 vertexFormat {
                     position(3)
                     normal(3)
-                    attribute("tangent", 3, VertexElementType.FLOAT32)
-                    attribute("binormal", 3, VertexElementType.FLOAT32)
+                    attribute("tangent", VertexElementType.VECTOR3_FLOAT32)
+                    attribute("binormal",VertexElementType.VECTOR3_FLOAT32)
                     textureCoordinate(3)
                 }, 6 * 3 * 2
         )

@@ -2,12 +2,7 @@ import org.openrndr.*
 import org.openrndr.color.ColorRGBa
 import org.openrndr.draw.*
 import org.openrndr.math.Vector2
-import org.openrndr.math.Vector3
-import org.openrndr.math.transforms.transform
-import org.openrndr.shape.Triangulator
 import org.openrndr.shape.contour
-import org.openrndr.svg.loadSVG
-import java.io.File
 
 /**
  * This is a basic example that shows how to use shade styles
@@ -29,7 +24,6 @@ class Example : Program() {
     }
 
     override fun draw() {
-
         drawer.background(ColorRGBa.GRAY.shade(0.5))
 
         // -- apply the style, it will be in effect for all following draw calls

@@ -38,5 +38,6 @@ include 'animation-001',
         'svg-001',
         'ui-001',
         'ui-002',
+        'ui-003',
         'video-001',
         'video-002'

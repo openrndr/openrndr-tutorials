@@ -33,7 +33,7 @@ class Example : Program() {
         // -- create the transform buffer
         transforms = vertexBuffer(
                 vertexFormat {
-                    attribute("transform", 16, VertexElementType.FLOAT32)
+                    attribute("transform", VertexElementType.MATRIX44_FLOAT32)
                 }, 1000)
 
         // -- fill the transform buffer
