@@ -4,7 +4,7 @@ group 'org.openrndr.examples'
 version '0.4-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.2.51'
+    ext.kotlin_version = '1.2.60'
 
     repositories {
         mavenCentral()
@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-ext.rndr_version = '0.3.22'
+ext.rndr_version = '0.3.23'
 ext.panel_version = '0.3.3'
 ext.slf4j_version = '1.7.25'
 ext.rndr_gl3_natives = ""
