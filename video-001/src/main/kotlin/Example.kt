@@ -14,7 +14,7 @@ class Example: Program() {
     lateinit var videoPlayer:FFMPEGVideoPlayer
 
     override fun setup() {
-        videoPlayer = FFMPEGVideoPlayer.fromURL("file:video-001/data/openrndr.mp4")
+        videoPlayer = FFMPEGVideoPlayer.fromURL("file:data/openrndr.mp4")
         videoPlayer.start()
     }
 
