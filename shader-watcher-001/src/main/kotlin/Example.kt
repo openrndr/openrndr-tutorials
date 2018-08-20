@@ -15,8 +15,8 @@ class Example: Program() {
     lateinit var watcher: ShaderWatcher
     override fun setup() {
         watcher = shaderWatcher {
-            fragmentShaderUrl = "file:../data/shaders/watch-me.frag"
-            vertexShaderUrl = "file:../data/shaders/watch-me.vert"
+            fragmentShaderUrl = "file:data/shaders/watch-me.frag"
+            vertexShaderUrl = "file:data/shaders/watch-me.vert"
         }
     }
 

@@ -35,6 +35,10 @@ switch (OperatingSystem.current()) {
 allprojects {
     apply plugin: 'java'
     apply plugin: 'kotlin'
+    apply plugin: 'application'
+    mainClassName = 'ExampleKt'
+    applicationDefaultJvmArgs = ["-XstartOnFirstThread"]
+    tasks.run.workingDir = new File('.').absolutePath
 
     sourceCompatibility = 1.8
     compileKotlin {
@@ -44,6 +48,7 @@ allprojects {
         kotlinOptions.jvmTarget = "1.8"
     }
     repositories {
+        mavenLocal()
         mavenCentral()
         maven {
             url = "https://dl.bintray.com/openrndr/openrndr/"
@@ -57,12 +62,6 @@ allprojects {
         runtime "org.openrndr:openrndr-gl3:$rndr_version"
         runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
     }
-}
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-
 }
 
 dependencies {

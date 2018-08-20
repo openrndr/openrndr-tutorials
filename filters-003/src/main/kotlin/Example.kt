@@ -8,7 +8,7 @@ import org.openrndr.filter.filterWatcherFromUrl
 /**
  * Example noise filter
  */
-class Noise : Filter(watcher = filterWatcherFromUrl("file:../data/shaders/noise.frag")) {
+class Noise : Filter(watcher = filterWatcherFromUrl("file:data/shaders/noise.frag")) {
     var gain: Double by parameters
     var time: Double by parameters
 
