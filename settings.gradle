@@ -40,4 +40,5 @@ include 'animation-001',
         'ui-002',
         'ui-003',
         'video-001',
-        'video-002'
+        'video-002',
+        'video-003'
