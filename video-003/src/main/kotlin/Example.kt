@@ -36,11 +36,11 @@ class Example: Program() {
         drawer.background(ColorRGBa.BLACK)
 
         // -- bind the render target, clear it with black, draw a video frame on it
-        rt.bind()
-        drawer.background(ColorRGBa.BLACK)
-        videoPlayer.next()
-        videoPlayer.draw(drawer)
-        rt.unbind()
+        drawer.withTarget(rt) {
+            drawer.background(ColorRGBa.BLACK)
+            videoPlayer.next()
+            videoPlayer.draw(drawer)
+        }
 
         // -- apply a blur on the render target's color attachment
         blur.apply(rt.colorBuffer(0), rt.colorBuffer(0))
