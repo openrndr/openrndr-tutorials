@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-ext.rndr_version = '0.3.23'
+ext.rndr_version = '0.4.0-SNAPSHOT' // should be 0.3.26 eventually
 ext.panel_version = '0.3.3'
 ext.slf4j_version = '1.7.25'
 ext.rndr_gl3_natives = ""
@@ -59,6 +59,7 @@ allprojects {
         compile "org.openrndr:openrndr-core:$rndr_version"
         compile "org.openrndr:openrndr-animatable:$rndr_version"
         compile "org.openrndr:openrndr-svg:$rndr_version"
+        compile "org.openrndr:openrndr-extensions:$rndr_version"
         runtime "org.openrndr:openrndr-gl3:$rndr_version"
         runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
     }
