@@ -5,7 +5,3 @@ configurations.all {
     // Check for updates every build
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
-
-dependencies {
-    compile('org.openrndr.panel:openrndr-panel:0.3.3'){ changing = true }
-}

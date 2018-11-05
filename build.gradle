@@ -15,7 +15,7 @@ buildscript {
 }
 
 ext.rndr_version = '0.3.28'
-ext.panel_version = '0.3.3'
+ext.panel_version = '0.3.6'
 ext.slf4j_version = '1.7.25'
 ext.coroutines_version = '1.0.0'
 ext.rndr_gl3_natives = ""
@@ -54,6 +54,8 @@ allprojects {
         maven {
             url = "https://dl.bintray.com/openrndr/openrndr/"
         }
+        maven { url 'https://jitpack.io' }
+
     }
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -65,6 +67,11 @@ allprojects {
         compile "org.openrndr:openrndr-extensions:$rndr_version"
         runtime "org.openrndr:openrndr-gl3:$rndr_version"
         runtime "org.openrndr:$rndr_gl3_natives:$rndr_version"
+
+        compile 'org.slf4j:slf4j-nop:1.7.25'
+        implementation "com.github.openrndr:openrndr-panel:v$panel_version"
+
+
     }
 }
 
