@@ -8,14 +8,17 @@ import org.openrndr.math.transforms.transform
 import org.openrndr.shape.Rectangle
 
 /**
- * This is a basic example that shows how to draw many rectangles at once.
+ * This is a basic example that shows how to draw many rectangles at once and how to give per instance transforms
  */
 class Example : Program() {
     lateinit var transforms: VertexBuffer
+    private val rectangleCount = 100000
 
     override fun setup() {
-        transforms = vertexBuffer(vertexFormat { attribute("transform", 16, VertexElementType.FLOAT32)
-        attribute("color", 4, VertexElementType.FLOAT32)}, 100000)
+        transforms = vertexBuffer(vertexFormat {
+            attribute("transform", VertexElementType.MATRIX44_FLOAT32)
+            attribute("color", VertexElementType.VECTOR4_FLOAT32)
+        }, rectangleCount)
     }
 
     override fun draw() {
@@ -25,14 +28,14 @@ class Example : Program() {
         drawer.strokeWeight = 2.0
 
         transforms.put {
-            for (i in 0 until 100000) {
+            for (i in 0 until rectangleCount) {
                 write(
-                transform {
-                    translate(Math.cos(i*3.34234)*width, Math.sin(i*1.43234)*height)
-                    rotate(Vector3(0.0, 0.0, 1.0), seconds*360.0 + i)
-                    scale(10.0, 3.0, 1.0)
-                })
-                write(ColorRGBa(Math.cos(i*0.432), Math.cos(i*0.4654), Math.cos(i*0.543)))
+                        transform {
+                            translate(Math.cos(i * 3.34234) * width, Math.sin(i * 1.43234) * height)
+                            rotate(Vector3(0.0, 0.0, 1.0), seconds * 360.0 + i)
+                            scale(10.0, 3.0, 1.0)
+                        })
+                write(ColorRGBa(Math.cos(i * 0.432), Math.cos(i * 0.4654), Math.cos(i * 0.543)))
             }
         }
 
@@ -45,7 +48,7 @@ class Example : Program() {
             """.trimIndent()
             attributes(transforms)
         }
-        drawer.rectangle((0 until 100000).map { Rectangle(-0.5, -0.5, 1.0, 1.0) })
+        drawer.rectangles(List(rectangleCount) { Rectangle(-0.5, -0.5, 1.0, 1.0) })
     }
 }
 
