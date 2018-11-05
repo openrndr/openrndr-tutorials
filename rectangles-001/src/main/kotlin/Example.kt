@@ -11,23 +11,12 @@ import org.openrndr.shape.Rectangle
  */
 class Example : Program() {
 
-    var index = 0
-    var startTime = System.currentTimeMillis()
-
     override fun draw() {
         drawer.background(ColorRGBa.BLACK)
         drawer.fill = null
         drawer.stroke = ColorRGBa.WHITE.opacify(0.1)
-
         drawer.strokeWeight = 2.0
-
-
-
-        drawer.rectangle((0..20000).map { Rectangle(Math.random() * width, Math.random() * height, 10.0, 10.0) })
-//        //drawer.circles((0..20000).map { Vector2(Math.random()*width, Math.random()*height) }, 10.0)
-//        drawer.circles((0..20000).map {
-//            Circle(Vector2(Math.random()*width, Math.random()*height), 20.0)
-//        })
+        drawer.rectangles(List(20000) { Rectangle(Math.random() * width, Math.random() * height, 10.0, 10.0) })
     }
 }
 

@@ -7,12 +7,12 @@ import org.openrndr.draw.FontImageMap
 /**
  * This is a basic example that shows how to display text using FontImageMap and Drawer.text
  **/
-class Example: Program() {
+class Example : Program() {
 
-    lateinit var font : FontImageMap
+    lateinit var font: FontImageMap
 
     override fun setup() {
-        font = FontImageMap.fromUrl("data/fonts/Roboto-Medium.ttf", 16.0)
+        font = FontImageMap.fromUrl("file:data/fonts/Roboto-Medium.ttf", 16.0)
     }
 
     override fun draw() {
