@@ -4,7 +4,7 @@ group 'org.openrndr.examples'
 version '0.4-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.2.60'
+    ext.kotlin_version = '1.3.0'
 
     repositories {
         mavenCentral()
@@ -14,9 +14,10 @@ buildscript {
     }
 }
 
-ext.rndr_version = '0.4.0-SNAPSHOT' // should be 0.3.26 eventually
+ext.rndr_version = '0.3.28'
 ext.panel_version = '0.3.3'
 ext.slf4j_version = '1.7.25'
+ext.coroutines_version = '1.0.0'
 ext.rndr_gl3_natives = ""
 
 switch (OperatingSystem.current()) {
@@ -56,6 +57,8 @@ allprojects {
     }
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
         compile "org.openrndr:openrndr-core:$rndr_version"
         compile "org.openrndr:openrndr-animatable:$rndr_version"
         compile "org.openrndr:openrndr-svg:$rndr_version"
