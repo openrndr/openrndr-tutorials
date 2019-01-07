@@ -8,4 +8,4 @@ The advised way of running the examples is to create a new project from existing
 
 Alternatively you can run the samples from the command line using `./gradlew :<project-name>:run`
 
-Note that on OSX an additional step is required. The JVM argument `-XrunOnFirstThread` has to be added in the run configuration. When running the examples from the command line this has been taken care of. 
+Note that on OSX an additional step is required. The JVM argument `-XstartOnFirstThread` has to be added in the run configuration. When running the examples from the command line this has been taken care of. 
