@@ -6,7 +6,7 @@ import org.openrndr.draw.loadImage
 /**
  * This is a basic example that shows how to load and draw images
  */
-class Image001 : Program() {
+class Example : Program() {
     override fun setup() {
         val image = loadImage("file:data/images/test_pattern.png")
         extend {
@@ -15,4 +15,4 @@ class Image001 : Program() {
     }
 }
 
-fun main() = Application.run(Image001(), Configuration())
+fun main() = Application.run(Example(), Configuration())

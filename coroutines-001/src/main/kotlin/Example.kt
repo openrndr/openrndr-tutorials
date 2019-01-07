@@ -12,7 +12,7 @@ import org.openrndr.draw.renderTarget
 import org.openrndr.filter.blend.passthrough
 import org.openrndr.internal.Driver
 
-class Coroutines001 : Program() {
+class Example : Program() {
     override fun setup() {
         // -- we need a nicer api for this in the near future
         val drawThread = Driver.driver.createDrawThread()
@@ -66,4 +66,4 @@ class Coroutines001 : Program() {
     }
 }
 
-fun main() = application(Coroutines001(), configuration { })
+fun main() = application(Example(), configuration { })

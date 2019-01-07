@@ -9,7 +9,7 @@ import org.openrndr.extensions.Screenshots
  * Demonstrates the Screenshots extension
  * Screenshots are taken by pressing the space bar
  */
-class Screenshots001: Program() {
+class Example: Program() {
 
     override fun setup() {
         // -- install the Screenshots extension
@@ -29,6 +29,6 @@ class Screenshots001: Program() {
 }
 
 fun main(args: Array<String>) {
-    application(Screenshots001(), configuration {  })
+    application(Example(), configuration {  })
 
 }
