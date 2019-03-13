@@ -13,7 +13,7 @@ import java.io.File
  * Demonstrates the use of CompositionDrawer and Composition.saveToFile to
  * easily write SVG files.
  */
-class CompositionDrawer001: Program() {
+class Example: Program() {
 
     lateinit var composition: Composition
     override fun setup() {
@@ -33,5 +33,5 @@ class CompositionDrawer001: Program() {
 }
 
 fun main(args: Array<String>) {
-    application(CompositionDrawer001(), configuration{})
+    application(Example(), configuration{})
 }

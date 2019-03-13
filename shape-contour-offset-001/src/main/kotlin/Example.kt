@@ -6,7 +6,7 @@ import org.openrndr.math.Vector2
 import org.openrndr.shape.Rectangle
 import org.openrndr.shape.SegmentJoin
 
-class ShapeContourOffset001: Program() {
+class Example: Program() {
 
     override fun draw() {
         drawer.fill = null
@@ -23,7 +23,7 @@ class ShapeContourOffset001: Program() {
 }
 
 fun main(args: Array<String>) {
-    application(ShapeContourOffset001(), configuration {
+    application(Example(), configuration {
 
     })
 

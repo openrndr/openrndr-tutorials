@@ -5,7 +5,7 @@ import org.openrndr.configuration
 import org.openrndr.math.Vector2
 import org.openrndr.shape.*
 
-class ShapeBoolean001 : Program() {
+class Example : Program() {
     override fun draw() {
         val a = Circle(Vector2(width / 2.0, height / 2.0), 100.0).contour
         val b = Circle(mouse.position, 70.0).contour
@@ -29,6 +29,6 @@ class ShapeBoolean001 : Program() {
 }
 
 fun main(args: Array<String>) {
-    application(ShapeBoolean001(), configuration {  })
+    application(Example(), configuration {  })
 
 }

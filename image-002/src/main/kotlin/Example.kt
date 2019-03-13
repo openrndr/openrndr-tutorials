@@ -8,7 +8,7 @@ import org.openrndr.draw.tint
 /**
  * This is a basic example that shows how to load and draw images and apply tinting
  */
-class Image002 : Program() {
+class Example : Program() {
     override fun setup() {
         val image = loadImage("file:data/images/test_pattern.png")
         extend {
@@ -22,4 +22,4 @@ class Image002 : Program() {
     }
 }
 
-fun main() = Application.run(Image002(), Configuration())
+fun main() = Application.run(Example(), Configuration())
