@@ -33,6 +33,11 @@ class ShadertoyBuffer(shader: Shader) : Filter(shader) {
 
 /**
  * This is a basic example that shows how to use Shadertoy code involving multiple buffers (tabs).
+ *
+ * Reaction Diffusion - 2 Pass
+ * By Shane
+ * https://www.shadertoy.com/view/XsG3z1
+ * Ported to OPENRNDR by Kazik Pogoda
  */
 class Example : Program() {
 
