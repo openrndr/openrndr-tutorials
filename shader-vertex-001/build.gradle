@@ -1,0 +1,7 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+dependencies {
+    compile "com.github.openrndr.orx:orx-noise:v$orx_version"
+    compile "com.github.openrndr.orx:orx-mesh-generators:v$orx_version"
+}

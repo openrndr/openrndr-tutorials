@@ -19,6 +19,7 @@ ext.panel_version = '0.3.13'
 ext.slf4j_version = '1.7.25'
 ext.coroutines_version = '1.0.0'
 ext.rndr_gl3_natives = ""
+ext.orx_version = "0.0.23"
 
 switch (OperatingSystem.current()) {
     case OperatingSystem.WINDOWS:
