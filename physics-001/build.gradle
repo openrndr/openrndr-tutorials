@@ -1,33 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'kotlin'
 
-project.ext.openrndrVersion = "0.3.32-rc3"
 project.ext.gdxVersion = '1.9.8'
 
-switch (org.gradle.internal.os.OperatingSystem.current()) {
-    case org.gradle.internal.os.OperatingSystem.WINDOWS:
-        project.ext.openrndrOS = "windows"
-        break
-    case org.gradle.internal.os.OperatingSystem.LINUX:
-        project.ext.openrndrOS = "linux"
-        break
-    case org.gradle.internal.os.OperatingSystem.MAC_OS:
-        project.ext.openrndrOS = "macos"
-        break
-}
 
 dependencies {
     compile "com.badlogicgames.gdx:gdx:$gdxVersion"
     compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
     compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
     compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-
-    runtime "org.openrndr:openrndr-gl3:$openrndrVersion"
-    runtime "org.openrndr:openrndr-gl3-natives-$openrndrOS:$openrndrVersion"
-    compile "org.openrndr:openrndr-core:$openrndrVersion"
-    compile "org.openrndr:openrndr-svg:$openrndrVersion"
-    compile "org.openrndr:openrndr-animatable:$openrndrVersion"
-    compile "org.openrndr:openrndr-extensions:$openrndrVersion"
-    compile "org.openrndr:openrndr-filter:$openrndrVersion"
-    compile "org.openrndr:openrndr-ffmpeg:$openrndrVersion"
 }
